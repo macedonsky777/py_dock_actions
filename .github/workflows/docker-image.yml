@@ -77,7 +77,7 @@ jobs:
     - name: push coverage
       uses: EndBug/add-and-commit@v9
       with:
-        author_name: Alex Macedonsky
+        author_name: Alex Macedonsky  
         author_email: yano.motoharu.kikuchi@gmail.com
         message: 'Add code coverage report'
         add: 'coverage'
