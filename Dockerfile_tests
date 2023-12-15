@@ -2,6 +2,6 @@ FROM ghcr.io/macedonsky777/py_dock_actions:latest
 
 RUN pip3 install coverage
 
-COPY tests /workdir
+COPY . /workdir
 
-ENTRYPOINT ["bash", "-c", "python3 -m coverage run -m unittest && python3 -m coverage xml -o /workdir/coverage.xml && python3 -m coverage html"]
+ENTRYPOINT ["coverage", "run", "-m", "unittest", "&&", "coverage", "html"]
