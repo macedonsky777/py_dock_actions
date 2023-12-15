@@ -33,6 +33,7 @@ jobs:
         tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.tag_version.outputs.new_tag }}, ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:tests
 
 
+
     - name: Test coverage
       run: |
         mkdir coverage 
