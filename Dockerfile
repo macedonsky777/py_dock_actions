@@ -1,11 +1,7 @@
-FROM ubuntu:latest
+FROM ghcr.io/macedonsky777/py_dock_actions:latest
 
-RUN apt update && apt install python3 python3-pip -y
-RUN pip3 install --upgrade pip
-RUN pip3 install mysql-connector-python pymysql
+RUN pip3 install coverage
 
-RUN mkdir /work
-COPY src /work
+COPY tests /workdir
 
-WORKDIR /work
-ENTRYPOINT ["python3", "main.py"]
+ENTRYPOINT ["python3", "tests.py"]
