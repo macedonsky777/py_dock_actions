@@ -15,7 +15,7 @@ class TestShop(unittest.TestCase):
     def test_shop_connection(self):
         self.shop_manage.test_shop()
         # Add assertions based on the expected behavior of your test
-
+        print("Test result:", result)
 if __name__ == "__main__":
     print("Wait, testing...")
     unittest.main()
