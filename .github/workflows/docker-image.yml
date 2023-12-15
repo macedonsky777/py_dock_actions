@@ -59,6 +59,25 @@ jobs:
         file: Dockerfile_tests
         push: false
         tags: ${{ env.REGISTRY }}/${{ env.REPO }}:tests
+    - name: Install coverage
+      run: |
+        pip install coverage
+    - name: Check test discovery
+      run: |
+        ls -R tests
+    - name: Check test discovery
+      run: |
+        ls -R tests
+    - name: Run tests with coverage
+      run: |
+        coverage run tests/tests.py
+    - name: Print coverage report
+      run: |
+        coverage report
+
+
+
+    
     
     - name: Test coverage
       run: |
