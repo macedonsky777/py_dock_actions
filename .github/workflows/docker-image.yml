@@ -89,4 +89,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: code-coverage-report
-        path: /workdir/htmlcov
+        path: coverage
+        if-no-files-found: warn
