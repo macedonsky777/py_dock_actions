@@ -1,8 +1,33 @@
 from db import Mysql
+import time
+
 class Shop(Mysql):
     def __init__(self, dbhost, dbuser, dbpass, dbname, dbport):
         super().__init__(dbhost, dbuser, dbpass, dbname, dbport)
+        max_retries = 30
+        retries = 0
         self._mydb = self.mydb
+
+        while True:
+            try:
+                self.mydb = mysql.connector.connect(
+                    dbhost=dbhost,
+                    dbuser=dbuser,
+                    dbpass=dbpass
+                )
+
+                print("MySQL is ready.")
+                break
+            except mysql.connector.Error as err:
+                
+                print(f"Waiting for MySQL... ({err})")
+                time.sleep(1)
+                retries += 1
+
+                if retries >= max_retries:
+                    print("Unable to connect to MySQL. Exiting.")
+                    exit(1)
+
         self._mycursor = self._mydb.cursor()
 
     def create_main_db(self, db_name):
