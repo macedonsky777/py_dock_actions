@@ -1,12 +1,5 @@
 version: "3.9"
 services:
-  app:
-    tty: true
-    image: ghcr.io/macedonsky777/py_dock_actions:tests
-    build:
-      context: .
-      dockerfile: Dockerfile_tests
-
   app-coverage:
     container_name: app-coverage
     tty: true
@@ -17,13 +10,6 @@ services:
     entrypoint: bash -c "python3 -m coverage run -m unittest && python3 -m coverage xml -o /workdir/coverage.xml && python3 -m coverage html"
     volumes:
       - coverage:/workdir/coverage
-
-  mysql:
-    image: mariadb:latest
-    environment:
-      - MYSQL_ROOT_PASSWORD=qwerty1234
-    ports:
-      - 3306:3306
 
 volumes:
   coverage:
