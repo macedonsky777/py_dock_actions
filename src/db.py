@@ -17,6 +17,30 @@ class Mysql():
                                             )
         self._mycursor = self.mydb.cursor()
         self._mycursor.execute(f"USE {dbname}")
+        
+        max_retries = 30
+        retries = 0
+        
+        while True:
+            try:
+                self.mydb = mysql.connector.connect(
+                    dbhost=dbhost,
+                    dbuser=dbuser,
+                    dbpass=dbpass
+                )
+
+                print("MySQL is ready.")
+                break
+            except mysql.connector.Error as err:
+                
+                print(f"Waiting for MySQL... ({err})")
+                time.sleep(1)
+                retries += 1
+
+                if retries >= max_retries:
+                    print("Unable to connect to MySQL. Exiting.")
+                    exit(1)
+
 
     def create_db(self, dbname):
         self.dbname = dbname
