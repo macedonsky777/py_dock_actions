@@ -1,4 +1,10 @@
 import unittest
+import coverage  # Add this import
+
+# Start code coverage measurement
+cov = coverage.Coverage()
+cov.start()
+
 from shop import Shop
 
 class TestShop(unittest.TestCase):
@@ -12,4 +18,13 @@ class TestShop(unittest.TestCase):
 
 if __name__ == "__main__":
     print("Wait, testing...")
+
+    # Discover and run the tests
     unittest.main()
+
+    # Stop code coverage measurement and generate the report
+    cov.stop()
+    cov.save()
+
+    # Optionally, print the coverage report
+    cov.report()
