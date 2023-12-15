@@ -30,7 +30,7 @@ jobs:
       with:
         file: Dockerfile_tests
         push: false
-        tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.tag_version.outputs.new_tag }}, ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:tests
+        tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:tests
 
 
 
