@@ -1,14 +1,15 @@
-from shop import PetShop
+from shop import Shop
 import sys
-
-
+#shop_manage = Shop(dbhost='localhost', dbuser='root', dbpass='qwerty123', dbname='Shops', dbport='3306')
+#shop_manage.test_shop()
 host = sys.argv[1]
 user = sys.argv[2]
-password = sys.argv[3]
-
-petshop = PetShop(host, user, password)
-petshop.create_shop()
-ids = petshop.add_item("Mikky mouse", 100)
+passwodr = sys.argv[3]
+#
+shop = Shop(host, user, password)
+shop.create_shop()
+ids = shop.add_item("Pikachu", 777)
 print(ids)
 for id in ids:
-    res = petshop.delete_item_by_id(id)
+    res = shop.delete_item_by_id(id)
+    
