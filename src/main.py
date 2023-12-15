@@ -4,7 +4,7 @@ import sys
 #shop_manage.test_shop()
 host = sys.argv[1]
 user = sys.argv[2]
-passwodr = sys.argv[3]
+password = sys.argv[3]
 #
 shop = Shop(host, user, password)
 shop.create_shop()
