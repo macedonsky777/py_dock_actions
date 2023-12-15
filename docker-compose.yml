@@ -10,6 +10,12 @@ services:
     entrypoint: bash -c "python3 -m coverage run -m unittest && python3 -m coverage xml -o /workdir/coverage.xml && python3 -m coverage html"
     volumes:
       - coverage:/workdir/coverage
+  mysql:
+    image: mysql:5.7.44
+    environment:
+      - MYSQL_ROOT_PASSWORD=qwerty1234
+    ports:
+      - 3306:3306
 
 volumes:
   coverage:
