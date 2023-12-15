@@ -1,15 +1,14 @@
 import unittest
 from shop import Shop
 
+class TestShop(unittest.TestCase):
+    def setUp(self):
+        # Setup code that should be run before each test method
+        self.shop_manage = Shop(dbhost='localhost', dbuser='root', dbpass='qwerty1234', dbname='Shops', dbport='3306')
 
-class TestMysql(unittest.TestCase):
-    def __init__(self, dbhost, dbuser, dbpass, dbname, dbport):
-        self._mydb = self.mydb
-        self._mycursor = self._mydb.cursor()
-        print("Nice!")
-    
-    def test_shop(self):
-        self.test_connection()
+    def test_shop_connection(self):
+        self.shop_manage.test_shop()
+        # Add assertions based on the expected behavior of your test
 
 if __name__ == "__main__":
     print("Wait, testing...")
