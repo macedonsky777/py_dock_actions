@@ -1,21 +1,22 @@
 import unittest
-import sys
-import os
+from shop import PetShop
 
-# Add the path to the src directory
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../src")))
 
-from shop import Shop
-
-class TestShop(unittest.TestCase):
+class TestMysql(unittest.TestCase):
     def setUp(self):
-        # Setup code that should be run before each test method
-        self.shop_manage = Shop(dbhost='mysql', dbuser='root', dbpass='qwerty1234', dbname='Shops', dbport='3306')
+        self.shop = PetShop("mysql", "root", "qwerty1234")
+        print("Connected!!!!!!!!!!!!!!!!!!!!")
+    
+    def test_create_item(self):
+        self.shop.create_shop()
+        res = self.shop.add_item("test pet1", 20)
+        print(f"RES: {res}")
+        self.assertTrue(len(res) > 0)
+    
+    def tearDown(self):
+        self.shop.delete_shop()
 
-    def test_shop_connection(self):
-        self.shop_manage.test_shop()
-        # Add assertions based on the expected behavior of your test
-        print("Test result:", result)
+
 if __name__ == "__main__":
-    print("Wait, testing...")
+    print("Start unit test!!!!!!!!!!!!!!!!!!!!!!!")
     unittest.main()
