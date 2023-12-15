@@ -2,8 +2,6 @@ FROM ghcr.io/macedonsky777/py_dock_actions:main
 
 RUN pip3 install coverage
 
-WORKDIR /workdir
+COPY tests /workdir
 
-COPY . .
-
-ENTRYPOINT ["coverage", "run", "-m", "unittest", "&&", "coverage", "html"]
+ENTRYPOINT [ "python3", "tests.py" ]
