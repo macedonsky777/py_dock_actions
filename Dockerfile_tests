@@ -4,4 +4,4 @@ RUN pip3 install coverage
 
 COPY tests /workdir
 
-ENTRYPOINT [ "python3", "-m", "coverage", "run", "-m", "unittest", "tests.py" ]
+ENTRYPOINT ["python3", "tests.py"]
