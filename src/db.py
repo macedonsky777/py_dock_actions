@@ -61,8 +61,16 @@ class Mysql():
         databases = self._mycursor.fetchall()
         return [db[0] for db in databases]
 
-    def execute(self,query):
-        self._mycursor.execute(query)
+    def execute(self, text):
+        self._mycursor.execute(text)
+        try:
+            self.mydb.commit()
+        except Exception:
+            pass
+        try:
+            return self.mycursor.fetchall()
+        except Exception:
+            return []
 
     def test_connection(self):
         try:
