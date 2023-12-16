@@ -40,7 +40,7 @@ class Mysql():
         self._mycursor.execute(f"CREATE TABLE {tablename} (id INT AUTO_INCREMENT PRIMARY KEY, item VARCHAR(255), price INT NOT NULL)")
 
     def insert_in_table(self, tablename, item, price):
-        sql = f"INSERT INTO {tablename} (item, price) VALUES ({item}, {price})"
+        sql = f"INSERT INTO {tablename} (item, price) VALUES ('{item}', {price})"
         return self.execute(sql)
         
 
