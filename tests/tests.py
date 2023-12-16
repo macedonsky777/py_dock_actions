@@ -9,7 +9,7 @@ class TestMysql(unittest.TestCase):
         print("Nice!")
     
     def test_create_item(self):
-        self.shop.create_shop()
+        self.shop.create_shop("pet")
         res = self.shop.add_item("test pet1", 20)
         print(f"RES: {res}")
         self.assertTrue(len(res) > 0)
