@@ -3,8 +3,8 @@ import time
 
 class Shop(Mysql):
     def __init__(self, dbhost, dbuser, dbpass, dbname, dbport):
-        super().__init__(dbhost, dbuser, dbpass, dbname, dbport)
-        
+        super().__init__(dbhost, dbuser, dbpass, dbport)
+        self.dbname = dbname
         self._mydb = self.mydb
         self._mycursor = self._mydb.cursor()
 
@@ -12,6 +12,7 @@ class Shop(Mysql):
         self.create_db(dbname=db_name)
 
     def create_shop(self, shop_name):
+        self.execute(f"USE {self.dbname}")
         self.create_table(tablename=shop_name)
         print(f"Creating a shop with table named {shop_name}")
 
