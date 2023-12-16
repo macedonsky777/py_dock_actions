@@ -19,7 +19,7 @@ class Shop(Mysql):
     def add_item(self, shop_name, item_name, item_price):
         self.insert_in_table(tablename=shop_name, val=(item_name, item_price))
         print(f"Adding item to {shop_name}: {item_name} priced at {item_price}")
-        query = f"SELECT id, name FROM {shop_name} WHERE name='{item_name}'"
+        query = f"SELECT id, item FROM {shop_name} WHERE item='{item_name}'"
         res = self.execute(query)
         ids = []
         for id_name in res:
