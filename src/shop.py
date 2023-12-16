@@ -33,11 +33,11 @@ class Shop(Mysql):
 
     def test_shop(self):
         self.test_connection()
-
+if __name__=="__main__":
 #Usage
-shop_manage = Shop(dbhost='db', dbuser='macdev1', dbpass='123321', dbname='Shops', dbport='3306')
+    shop_manage = Shop(dbhost='db', dbuser='macdev1', dbpass='123321', dbname='Shops', dbport='3306')
 
-shop_manage.test_shop()
+    shop_manage.test_shop()
 #shop_manage.create_main_db("Shops")
 #shop_manage.create_shop("Spooky_stuff")
 #shop_manage.add_item("Spooky_stuff", "putin_mask", 1)
@@ -46,3 +46,4 @@ shop_manage.test_shop()
 #shop_manage.show_all_staff("Spooky_stuff")
 #shop_manage.delete_shop("Spooky_stuff")
 #shop_manage.show_all_staff()
+
