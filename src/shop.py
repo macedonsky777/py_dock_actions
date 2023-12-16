@@ -19,7 +19,14 @@ class Shop(Mysql):
     def add_item(self, shop_name, item_name, item_price):
         self.insert_in_table(tablename=shop_name, val=(item_name, item_price))
         print(f"Adding item to {shop_name}: {item_name} priced at {item_price}")
-
+        query = f"SELECT id, name FROM {shop_name} WHERE name='{item_name}'"
+        res = self.execute(query)
+        ids = []
+        for id_name in res:
+            if id_name[1] == item_name:
+                ids.append(id_name[0])
+        return ids
+        
     def delete_item(self, shop_name, del_item_name):
         self.delete_from_table(tablename=shop_name, delitemname=del_item_name) 
         print(f"Deleting {del_item_name} from {shop_name} was successfull.")
