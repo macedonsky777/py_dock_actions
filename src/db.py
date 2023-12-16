@@ -72,6 +72,9 @@ class Mysql():
         databases = self._mycursor.fetchall()
         return [db[0] for db in databases]
 
+    def execute(self,query):
+        self._mycursor.execute(query)
+
     def test_connection(self):
         try:
             self.mydb.ping(reconnect=True)
