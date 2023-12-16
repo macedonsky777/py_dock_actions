@@ -4,17 +4,6 @@ from pymysql import Error
 
 class Mysql():
     def __init__(self, dbhost, dbuser, dbpass, dbport):
-        self._dbhost = dbhost
-        self._dbuser = dbuser
-        self._dbpass = dbpass
-        self._dbport = dbport
-        self.mydb = mysql.connector.connect(
-            host = dbhost,
-            user = dbuser,
-            password = dbpass,
-            port = dbport
-                                            )
-        self._mycursor = self.mydb.cursor()
         
         max_retries = 30
         retries = 0
@@ -22,9 +11,10 @@ class Mysql():
         while True:
             try:
                 self.mydb = mysql.connector.connect(
-                    dbhost=dbhost,
-                    dbuser=dbuser,
-                    dbpass=dbpass
+                    host=dbhost,
+                    user=dbuser,
+                    password=dbpass
+                    port=dbport
                 )
 
                 print("MySQL is ready.")
@@ -38,8 +28,9 @@ class Mysql():
                 if retries >= max_retries:
                     print("Unable to connect to MySQL. Exiting.")
                     exit(1)
-
-
+                    
+        self._mycursor = self.mydb.cursor()
+                
     def create_db(self, dbname):
         self.dbname = dbname
         self._mycursor.execute("CREATE DATABASE " + dbname)
