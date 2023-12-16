@@ -17,7 +17,7 @@ class Shop(Mysql):
         print(f"Creating a shop with table named {shop_name}")
 
     def add_item(self, shop_name, item_name, item_price):
-        self.insert_in_table(tablename=shop_name, val=(item_name, item_price))
+        self.insert_in_table(tablename=shop_name, item_name, item_price)
         print(f"Adding item to {shop_name}: {item_name} priced at {item_price}")
         query = f"SELECT id, item FROM {shop_name} WHERE item='{item_name}'"
         res = self.execute(query)
