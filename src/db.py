@@ -61,14 +61,18 @@ class Mysql():
 
     def execute(self, text):
         self._mycursor.execute(text)
-    try:
-        self.mydb.commit()
-    except Exception:
-        pass
-    try:
-        return self._mycursor.fetchall()
-    except Exception:
-        return []
+        try:
+            results = self._mycursor.fetchall()
+        except Exception:
+            results = []
+        try:
+            self.mydb.commit()
+        except Exception:
+            pass
+
+        self._mycursor.close()  # Close the cursor after execution
+        return results
+
 
     def test_connection(self):
         try:
