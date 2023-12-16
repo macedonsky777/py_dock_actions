@@ -51,7 +51,6 @@ class Mysql():
         self._mycursor.execute(sql_del, (delitemname,))
 
     def drop_table(self, tablename):
-        self.tablename = tablename
         drop_table_sql = f"DROP TABLE {tablename}"
         self.execute(drop_table_sql)
 
@@ -62,14 +61,14 @@ class Mysql():
 
     def execute(self, text):
         self._mycursor.execute(text)
-        try:
-            self.mydb.commit()
-        except Exception:
-            pass
-        try:
-            return self.mycursor.fetchall()
-        except Exception:
-            return []
+    try:
+        self.mydb.commit()
+    except Exception:
+        pass
+    try:
+        return self._mycursor.fetchall()
+    except Exception:
+        return []
 
     def test_connection(self):
         try:
