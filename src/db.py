@@ -3,11 +3,10 @@ import pymysql
 from pymysql import Error
 
 class Mysql():
-    def __init__(self, dbhost, dbuser, dbpass, dbname, dbport):
+    def __init__(self, dbhost, dbuser, dbpass, dbport):
         self._dbhost = dbhost
         self._dbuser = dbuser
         self._dbpass = dbpass
-        self._dbname = dbname
         self._dbport = dbport
         self.mydb = mysql.connector.connect(
             host = dbhost,
@@ -16,7 +15,6 @@ class Mysql():
             port = dbport
                                             )
         self._mycursor = self.mydb.cursor()
-        self._mycursor.execute(f"USE {dbname}")
         
         max_retries = 30
         retries = 0
