@@ -54,7 +54,7 @@ class Mysql():
     def drop_table(self, tablename):
         self.tablename = tablename
         drop_table_sql = f"DROP TABLE {tablename}"
-        self._mycursor.execute(drop_table_sql)
+        self.execute(drop_table_sql)
 
     def show_all(self):
         self._mycursor.execute("SHOW DATABASES")
