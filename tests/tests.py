@@ -15,7 +15,7 @@ class TestMysql(unittest.TestCase):
         self.assertTrue(len(res) > 0)
     
     def tearDown(self):
-        self.shop.delete_shop()
+        self.shop.delete_shop("pet")
 
 
 if __name__ == "__main__":
