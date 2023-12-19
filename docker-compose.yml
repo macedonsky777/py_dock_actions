@@ -10,7 +10,7 @@ services:
   app-coverage:
     container_name: app-coverage
     tty: true
-    image: ghcr.io/macedonsky777/py_dock_actions:main
+    image: ghcr.io/macedonsky777/py_dock_actions:test
     build:
       context: .
       dockerfile: Dockerfile_tests
