@@ -84,7 +84,7 @@ jobs:
         add: 'coverage'
         pull: '-r'
         push: true
-        new_branch: gh-pages
+#        new_branch: gh-pages
 
     - name: Deploy to GitHub Pages
       uses: crazy-max/ghaction-github-pages@v4
