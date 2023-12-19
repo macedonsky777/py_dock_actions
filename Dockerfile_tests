@@ -1,6 +1,6 @@
-FROM ghcr.io/macedonsky777/py_dock_actions:main
+FROM ghcr.io/macedonsky777/py_dock_actions:test
 
-RUN pip3 -m install coverage
+RUN pip3 install coverage
 WORKDIR /work
 COPY tests /work
 
