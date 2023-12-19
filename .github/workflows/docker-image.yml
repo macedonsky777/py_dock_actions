@@ -80,11 +80,12 @@ jobs:
       with:
         author_name: Alex Macedonsky  
         author_email: yano.motoharu.kikuchi@gmail.com
+        new_branch: gh-pages1
         message: 'Add code coverage report'
         add: 'coverage'
-        pull: '-r'
+        pull: '--rebase --autostash'
         push: true
-        new_branch: gh-pages1
+        
 
     - name: Deploy to GitHub Pages
       uses: crazy-max/ghaction-github-pages@v4
