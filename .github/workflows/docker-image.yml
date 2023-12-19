@@ -81,6 +81,7 @@ jobs:
         author_name: Alex Macedonsky  
         author_email: yano.motoharu.kikuchi@gmail.com
         new_branch: gh-pages1
+        commit: --signoff
         message: 'Add code coverage report'
         add: 'coverage'
         pull: '-r'
