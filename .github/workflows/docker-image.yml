@@ -45,7 +45,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: false
-        tags: ${{ env.REGISTRY }}/${{ env.REPO }}:main, ${{ env.REGISTRY }}/${{ env.REPO }}:main
+        tags: ${{ env.REGISTRY }}/${{ env.REPO }}:main
 
     - name: Build image with tests
       uses: docker/build-push-action@v5
