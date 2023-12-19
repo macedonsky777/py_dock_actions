@@ -71,7 +71,6 @@ jobs:
       run: |
         mkdir coverage
         docker compose up -d mysql
-        sleep 10
         docker compose up app-coverage
         rm -rf coverage/.gitignore
 
@@ -84,7 +83,7 @@ jobs:
         commit: --signoff
         message: 'Add code coverage report'
         add: 'coverage'
-        pull: '-r'
+        pull: '-r --autostash'
         push: true
         
 
