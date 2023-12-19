@@ -84,7 +84,7 @@ jobs:
         commit: --signoff
         message: 'Add code coverage report'
         add: 'coverage'
-        pull: '-r --autostash'
+#        pull: '-r --autostash'
         push: true
         
 
