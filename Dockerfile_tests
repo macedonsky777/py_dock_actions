@@ -1,7 +1,7 @@
 FROM ghcr.io/macedonsky777/py_dock_actions:main
 
-RUN pip3 install coverage
+RUN pip install coverage
 WORKDIR /work
 COPY tests /work
 
-ENTRYPOINT [ "python3", "tests.py" ]
+ENTRYPOINT [ "python", "tests.py" ]
