@@ -65,7 +65,7 @@ jobs:
       if: success()
       with:
         push: true
-        tags: ${{ env.REGISTRY }}/${{ env.REPO }}:${{ steps.tag_version.outputs.new_tag }}
+        tags: ${{ env.REGISTRY }}/${{ env.REPO }}:latest
     
     - name: Test coverage
       run: |
