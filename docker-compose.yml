@@ -2,7 +2,7 @@ version: "3.9"
 services:
   app:
     tty: true
-    image: ghcr.io/macedonsky777/py_dock_actions:main
+    image: ghcr.io/macedonsky777/py_dock_actions:latest
     build:
       context: .
       dockerfile: Dockerfile_tests
