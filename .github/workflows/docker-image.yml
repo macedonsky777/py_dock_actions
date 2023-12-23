@@ -60,12 +60,12 @@ jobs:
     #    docker compose up -d mysql
     #    docker compose up --exit-code-from app app
 
-    - name: Push image
-      uses: docker/build-push-action@v5
-      if: success()
-      with:
-        push: true
-        tags: ${{ env.REGISTRY }}/${{ env.REPO }}:latest
+    #- name: Push image
+     # uses: docker/build-push-action@v5
+      #if: success()
+      #with:
+       # push: true
+        #tags: ${{ env.REGISTRY }}/${{ env.REPO }}:latest
     
     - name: Test coverage
       run: |
