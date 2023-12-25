@@ -2,7 +2,7 @@ from db import Mysql
 import time
 
 class Shop(Mysql):
-    def __init__(self, dbhost, dbuser, dbpass, dbname, dbport):
+    def __init__(self, dbhost, dbuser, dbpass, dbname="pupa", dbport=3306):
         super().__init__(dbhost, dbuser, dbpass, dbport)
         self.dbname = dbname
         self._mydb = self.mydb
