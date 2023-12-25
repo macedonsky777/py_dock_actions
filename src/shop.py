@@ -11,7 +11,7 @@ class Shop(Mysql):
     def create_main_db(self, db_name):
         self.create_db(dbname=db_name)
 
-    def create_shop(self, shop_name):
+    def create_shop(self, shop_name="pepun"):
         self.execute(f"USE {self.dbname}")
         self.create_table(tablename=shop_name)
         print(f"Creating a shop with table named {shop_name}")
