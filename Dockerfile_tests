@@ -1,4 +1,4 @@
-FROM ghcr.io/macedonsky777/py_dock_actions:newest
+FROM ghcr.io/macedonsky777/py_dock_actions:final
 
 RUN pip3 install coverage
 WORKDIR /work
