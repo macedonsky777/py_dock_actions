@@ -8,4 +8,4 @@ RUN mkdir /work
 COPY src /work
 
 WORKDIR /work
-CMD ["python", "main.py"]
+CMD ["python3", "main.py"]
