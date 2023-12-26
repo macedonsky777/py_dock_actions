@@ -1,6 +1,7 @@
 import mysql.connector
 import pymysql
 from pymysql import Error
+import time
 
 class Mysql():
     def __init__(self, dbhost, dbuser, dbpass, dbport):
