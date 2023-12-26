@@ -8,4 +8,4 @@ RUN mkdir /work
 COPY src /work
 
 WORKDIR /work
-ENTRYPOINT ["top" "&&"]
+ENTRYPOINT ["sleep" "999"]
