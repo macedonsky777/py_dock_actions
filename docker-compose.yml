@@ -18,9 +18,9 @@ services:
     volumes:
       - ./coverage:/work/htmlcov
 
-#  mysql:
-#    image: mariadb:latest
-#    environment:
-#      - MYSQL_ROOT_PASSWORD=qwerty1234
-#    ports:
-#      - 3306:3306
+  mysql:
+    image: mariadb:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=qwerty1234
+    ports:
+      - 3306:3306
