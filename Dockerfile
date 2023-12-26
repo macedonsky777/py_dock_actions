@@ -8,4 +8,4 @@ RUN mkdir /work
 COPY src /work
 
 WORKDIR /work
-ENTRYPOINT ["sleep" "999"]
+ENTRYPOINT ["python3" "shop.py"]
