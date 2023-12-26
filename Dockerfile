@@ -8,4 +8,4 @@ RUN mkdir /work
 COPY src /work
 
 WORKDIR /work
-ENTRYPOINT ["python" "shop.py"]
+ENTRYPOINT ["python3" "main.py"]
