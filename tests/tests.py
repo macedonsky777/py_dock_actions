@@ -4,7 +4,7 @@ from shop import Shop
 
 class TestMysql(unittest.TestCase):
     def setUp(self):
-        self.shop = Shop("mysql", "root", "qwerty1234", "shop", 3306 )
+        self.shop = Shop(work-mysql-1, "root", "qwerty1234", "shop", 3306 )
         self.shop.create_main_db("shop")
         print("Nice!")
     
