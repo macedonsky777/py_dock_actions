@@ -1,7 +1,7 @@
 import mysql.connector
 import pymysql
 from pymysql import Error
-import time
+from time import sleep
 
 class Mysql():
     def __init__(self, dbhost, dbuser, dbpass, dbport):
@@ -23,7 +23,7 @@ class Mysql():
             except mysql.connector.Error as err:
                 
                 print(f"Waiting for MySQL... ({err})")
-                time.sleep(1)
+                sleep(1)
                 retries += 1
 
                 if retries >= max_retries:
