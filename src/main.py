@@ -7,7 +7,7 @@ import sys
 #password = sys.argv[3]
 #
 shop = Shop("mysql", dbuser="root", dbpass="qwerty1234", dbname="popl", dbport=3306)
-shop.create_shop()
+#shop.create_shop()
 ids = shop.add_item("Pikachu", 777)
 print(ids)
 for id in ids:
