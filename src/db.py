@@ -34,7 +34,7 @@ class Mysql():
                 
     def create_db(self, dbname):
         self.dbname = dbname
-        self._mycursor.execute("CREATE DATABASE " + dbname)
+        self._mycursor.execute("CREATE DATABASE IF NOT EXISTS " + dbname)
 
     def create_table(self, tablename):
         self.tablename = tablename
