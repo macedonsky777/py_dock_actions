@@ -16,7 +16,7 @@ services:
       dockerfile: Dockerfile_tests
     entrypoint: bash -c "python3 -m coverage run -m unittest && python3 -m coverage html"
     volumes:
-      - ./coverage:/work/htmlcov
+      - /py_dock/py_dock_actions/coverage:/work/htmlcov
 
   mysql:
     image: mariadb:latest
